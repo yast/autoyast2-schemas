@@ -1,0 +1,158 @@
+files_defaults: &files_defaults
+  files:
+    - src/autoyast-rnc/*.rnc
+    - src/desktop/*.desktop
+
+default_repositories: &default_repositories
+  - name: yast/yast-add-on
+    <<: *files_defaults
+
+  - name: yast/yast-audit-laf
+    <<: *files_defaults
+
+  - name: yast/yast-auth-client
+    <<: *files_defaults
+  - name: yast/yast-auth-server
+    <<: *files_defaults
+
+  - name: yast/yast-autoinstallation
+    files:
+      - src/autoyast-rnc/*.rnc
+      - src/desktop/*.desktop
+      - modconfig/*.desktop
+      - xslt/rng/*.rnc
+
+  - name: yast/yast-bootloader
+    <<: *files_defaults
+
+  - name: yast/yast-configuration-management
+    <<: *files_defaults
+
+  - name: yast/yast-country
+    files:
+      - keyboard/src/autoyast-rnc/*.rnc
+      - language/src/autoyast-rnc/*.rnc
+      - timezone/src/autoyast-rnc/*.rnc
+      - keyboard/src/desktop/*.desktop
+      - language/src/desktop/*.desktop
+      - timezone/src/desktop/*.desktop
+
+  - name: yast/yast-devtools
+    <<: *files_defaults
+
+  - name: yast/yast-dhcp-server
+    <<: *files_defaults
+
+  - name: yast/yast-dns-server
+    <<: *files_defaults
+
+  - name: yast/yast-firewall
+    <<: *files_defaults
+
+  - name: yast/yast-firstboot
+    files:
+      - src/autoyast-rnc/*.rnc
+      - desktop/*.desktop
+
+  - name: yast/yast-ftp-server
+    <<: *files_defaults
+
+  - name: yast/yast-http-server
+    <<: *files_defaults
+
+  - name: yast/yast-installation
+    files:
+      - src/autoyast-rnc/*.rnc
+      - autoyast_desktop/*.desktop
+
+  - name: yast/yast-iscsi-client
+    <<: *files_defaults
+
+  - name: yast/yast-kdump
+    <<: *files_defaults
+
+  - name: yast/yast-mail
+    <<: *files_defaults
+
+  - name: yast/yast-network
+    <<: *files_defaults
+
+  - name: yast/yast-nfs-client
+    <<: *files_defaults
+
+  - name: yast/yast-nfs-server
+    <<: *files_defaults
+
+  - name: yast/yast-nis-client
+    <<: *files_defaults
+
+  - name: yast/yast-nis-server
+    <<: *files_defaults
+
+  - name: yast/yast-ntp-client
+    <<: *files_defaults
+
+  - name: yast/yast-online-update-configuration
+    <<: *files_defaults
+
+  - name: yast/yast-printer
+    <<: *files_defaults
+
+  - name: yast/yast-proxy
+    <<: *files_defaults
+
+  - name: yast/yast-registration
+    <<: *files_defaults
+
+  - name: yast/yast-s390
+    <<: *files_defaults
+
+  - name: yast/yast-samba-client
+    <<: *files_defaults
+
+  - name: yast/yast-samba-server
+    <<: *files_defaults
+
+  - name: yast/yast-security
+    <<: *files_defaults
+
+  - name: yast/yast-services-manager
+    files:
+      - src/autoyast-rnc/*.rnc
+      - src/autoyast_rnc/*.rnc
+      - src/desktop/*.desktop
+
+  - name: yast/yast-sound
+    <<: *files_defaults
+
+  - name: yast/yast-squid
+    <<: *files_defaults
+
+  - name: yast/yast-sysconfig
+    <<: *files_defaults
+
+  - name: yast/yast-tftp-server
+    <<: *files_defaults
+
+  - name: yast/yast-users
+    <<: *files_defaults
+
+  - name: yast/yast-yast2
+    <<: *files_defaults
+
+  - name: yast/yast-schema
+    files:
+      - src/profile.rnc.templ
+
+:sle15sp3:
+  branch: "SLE-15-SP3"
+  repositories:
+    - *default_repositories
+    - name: yast/yast-geo-cluster
+      <<: *files_defaults
+
+
+:sle15sp2:
+  branch: "SLE-15-SP2"
+  repositories:
+    - *default_repositories

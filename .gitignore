@@ -1,0 +1,3 @@
+vendor/bundle
+package/*.tar.bz2
+build/
