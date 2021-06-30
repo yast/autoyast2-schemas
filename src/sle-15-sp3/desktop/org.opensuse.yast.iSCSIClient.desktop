@@ -1,0 +1,26 @@
+[Desktop Entry]
+Type=Application
+Categories=Settings;System;Qt;X-SuSE-YaST;X-SuSE-YaST-Net_advanced;
+
+X-KDE-ModuleType=Library
+X-KDE-HasReadOnlyMode=true
+X-SuSE-YaST-Call=iscsi-client
+
+X-SuSE-YaST-Group=Net_advanced
+X-SuSE-YaST-Argument=
+X-SuSE-YaST-RootOnly=true
+X-SuSE-YaST-AutoInst=all
+X-SuSE-YaST-Geometry=
+X-SuSE-YaST-SortKey=
+X-SuSE-YaST-AutoInstResource=iscsi-client
+X-SuSE-YaST-AutoInstClonable=true
+X-SuSE-YaST-AutoInstSchema=iscsi-client.rnc
+SuSE-YaST-Keywords=network,system
+
+Icon=yast-iscsi-client
+Exec=xdg-su -c "/sbin/yast2 iscsi-client"
+
+Name=YaST iSCSI Initiator
+GenericName=iSCSI Initiator
+Comment=Configure an iSCSI initiator
+StartupNotify=true

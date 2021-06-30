@@ -1,0 +1,25 @@
+[Desktop Entry]
+Type=Application
+Categories=Settings;System;Qt;X-SuSE-YaST;X-SuSE-YaST-Hardware;
+
+X-KDE-ModuleType=Library
+X-KDE-HasReadOnlyMode=true
+X-SuSE-YaST-Call=zfcp
+
+X-SuSE-YaST-Group=Hardware
+X-SuSE-YaST-Argument=
+X-SuSE-YaST-RootOnly=true
+X-SuSE-YaST-AutoInst=all
+X-SuSE-YaST-Geometry=
+X-SuSE-YaST-SortKey=
+X-SuSE-YaST-AutoInstResource=zfcp
+X-SuSE-YaST-AutoInstSchema=zfcp.rnc
+X-SuSE-YaST-AutoInstClonable=true
+
+Icon=yast-zfcp
+Exec=xdg-su -c "/sbin/yast2 zfcp"
+
+Name=YaST ZFCP
+GenericName=ZFCP
+Comment=Configure ZFCP
+StartupNotify=true

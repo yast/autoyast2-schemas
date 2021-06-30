@@ -1,0 +1,32 @@
+default namespace = "http://www.suse.com/1.0/yast2ns"
+namespace a = "http://relaxng.org/ns/compatibility/annotations/1.0"
+namespace config = "http://www.suse.com/1.0/configns"
+
+include "common.rnc"
+
+iscsi-client = element iscsi-client {
+    MAP,
+    (
+      element initiatorname { STRING }? &
+      element targets {
+          LIST,
+          element listentry {
+              MAP,
+              (
+                element authmethod  { STRING }? &
+                element password    { STRING }? &
+                element password_in { STRING }? &
+                element portal      { STRING }? &
+                element startup     { STRING }? &
+                element target      { STRING }? &
+                element username    { STRING }? &
+                element username_in { STRING }? &
+                element iface       { STRING }?
+              )
+          }*
+      }? &
+      element version { STRING }?
+    )
+}
+
+

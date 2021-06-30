@@ -1,0 +1,43 @@
+default namespace = "http://www.suse.com/1.0/yast2ns"
+namespace a = "http://relaxng.org/ns/compatibility/annotations/1.0"
+namespace config = "http://www.suse.com/1.0/configns"
+
+include "common.rnc"
+
+int_noempty = STRING_ATTR, (xsd:integer | empty)
+simple_listentry = element listentry { STRING }
+
+geo-cluster =
+  element geo-cluster {
+      LIST,
+      booth_config*
+  }
+
+booth_config =
+  element listentry {
+    MAP,
+    (
+      element filename { STRING } ? &
+      element authfile { STRING } ? &
+      element port { int_noempty } ? &
+      element transport { STRING } ? &
+      element arbitrator { LIST, simple_listentry* } ? &
+      element site { LIST, simple_listentry* } ? &
+      element ticket { LIST, ticket_listentry* } ?
+    )
+  }
+
+ticket_listentry =
+  element listentry {
+    MAP,
+    (
+      element acquire-after { int_noempty } ? &
+      element before-acquire-handler { STRING } ? &
+      element expire { int_noempty } ? &
+      element retries { int_noempty } ? &
+      element ticketname { STRING } ? &
+      element timeout { int_noempty } ? &
+      element weights { int_noempty } ? &
+      element mode { STRING } ?
+    )
+  }

@@ -1,0 +1,110 @@
+default namespace = "http://www.suse.com/1.0/yast2ns"
+namespace a = "http://relaxng.org/ns/compatibility/annotations/1.0"
+namespace config = "http://www.suse.com/1.0/configns"
+
+include "common.rnc"
+
+samba-client = element samba-client {
+  MAP,
+  (
+    element active_directory   {
+      MAP,
+      element kdc { STRING }?
+    }? &
+    element global             {
+      MAP,
+      (
+        element cups_options		{ STRING }? &
+        element include			{ STRING }? &
+        element logon_drive		{ STRING }? &
+        element logon_home		{ STRING }? &
+        element logon_path		{ STRING }? &
+        element	map_to_guest		{ STRING }? &
+        element passdb_backend		{ STRING }? &
+        element	printcap_cache_time	{ STRING }? &
+        element	printcap_name		{ STRING }? &
+        element	printing		{ STRING }? &
+        element cached_login           { STRING }? &
+        element idmap_gid              { STRING }? &
+        element idmap_uid              { STRING }? &
+        element security               { STRING }? &
+        element template_shell         { STRING }? &
+        element usershare_allow_guests { STRING }? &
+        element usershare_max_shares   { STRING }? &
+        element winbind_offline_logon  { STRING }? &
+        element workgroup              { STRING }?
+      )
+    }? &
+    element groups		{
+      MAP,
+      (
+        element comment			{ STRING }? &
+        element inherit_acls		{ STRING }? &
+        element path			{ STRING }? &
+        element read_only		{ STRING }?
+      )
+    }? &
+    element homes		{
+      MAP,
+      (
+        element browseable		{ STRING }? &
+        element comment			{ STRING }? &
+        element inherit_acls		{ STRING }? &
+        element read_only		{ STRING }? &
+        element valid_users		{ STRING }?
+      )
+    }? &
+    element print_dollarsign_		{
+      MAP,
+      (
+        element comment			{ STRING }? &
+        element create_mask		{ STRING }? &
+        element directory_mask		{ STRING }? &
+        element force_group		{ STRING }? &
+        element path			{ STRING }? &
+        element write_list		{ STRING }?
+      )
+    }? &
+    element printers		{
+      MAP,
+      (
+        element browseable		{ STRING }? &
+        element comment			{ STRING }? &
+        element create_mask		{ STRING }? &
+        element path			{ STRING }? &
+        element printable		{ STRING }?
+      )
+    }? &
+    element profiles		{
+      MAP,
+      (
+        element comment			{ STRING }? &
+        element create_mask		{ STRING }? &
+        element directory_mask		{ STRING }? &
+        element path			{ STRING }? &
+        element read_only		{ STRING }? &
+        element store_dos_attributes	{ STRING }?
+      )
+    }? &
+    element users		{
+      MAP,
+      (
+        element comment			{ STRING }? &
+        element inherit_acls		{ STRING }? &
+        element path			{ STRING }? &
+        element read_only		{ STRING }? &
+        element veto_files		{ STRING }?
+      )
+    }? &
+    element join               {
+      MAP,
+      (
+        element password { STRING }? &
+        element user     { STRING }?
+      )
+    }? &
+    element mkhomedir { BOOLEAN }? &
+    element winbind   { BOOLEAN }?
+  )
+}
+

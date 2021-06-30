@@ -1,0 +1,29 @@
+[Desktop Entry]
+Type=Application
+Categories=Qt;X-SuSE-YaST;X-SuSE-YaST-High_Availability;
+
+X-KDE-ModuleType=Library
+X-KDE-RootOnly=true
+X-KDE-HasReadOnlyMode=true
+X-SuSE-YaST-Call=geo-cluster
+
+X-SuSE-YaST-Group=High_Availability
+X-SuSE-YaST-Argument=
+X-SuSE-YaST-RootOnly=true
+X-SuSE-YaST-AutoInst=all
+X-SuSE-YaST-AutoInstDataType=list
+X-SuSE-YaST-AutoInstClonable=true
+X-SuSE-YaST-Geometry=
+X-SuSE-YaST-SortKey=
+X-SuSE-YaST-AutoInstResource=geo-cluster
+X-SuSE-YaST-AutoInstSchema=geo-cluster.rnc
+X-SuSE-YaST-Keywords=cluster,availability,high
+
+Icon=yast-geo-cluster
+Exec=/sbin/yast2 geo-cluster 
+
+Name=YaST Geo Cluster
+GenericName=Geo Cluster
+Comment=Configure Geo Cluster
+X-KDE-SubstituteUID=true
+StartupNotify=true
