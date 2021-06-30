@@ -1,0 +1,25 @@
+[Desktop Entry]
+Type=Application
+Categories=Settings;System;Qt;X-SuSE-YaST;X-SuSE-YaST-Net_advanced;
+
+X-KDE-ModuleType=Library
+X-KDE-HasReadOnlyMode=true
+X-SuSE-YaST-Call=squid
+
+X-SuSE-YaST-Group=Net_advanced
+X-SuSE-YaST-Argument=
+X-SuSE-YaST-RootOnly=true
+X-SuSE-YaST-AutoInst=all
+X-SuSE-YaST-Geometry=
+X-SuSE-YaST-SortKey=
+X-SuSE-YaST-AutoInstResource=squid
+X-SuSE-YaST-AutoInstSchema=squid.rnc
+X-SuSE-YaST-Keywords=proxy,network,internet
+
+Icon=yast-squid
+Exec=xdg-su -c "/sbin/yast2 squid"
+
+Name=YaST Squid
+GenericName=Squid
+Comment=Configure a Squid cache proxy server
+StartupNotify=true

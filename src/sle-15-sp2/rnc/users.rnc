@@ -1,0 +1,99 @@
+# <!ELEMENT group (gid, group_password, groupname, userlist)>
+
+default namespace = "http://www.suse.com/1.0/yast2ns"
+namespace a = "http://relaxng.org/ns/compatibility/annotations/1.0"
+namespace config = "http://www.suse.com/1.0/configns"
+
+login_settings = element login_settings {
+    element autologin_user { text }? & 
+    element password_less_login { BOOLEAN }? 
+}
+
+groups =
+  element groups {
+    LIST,
+    gr_group*
+  }
+gr_group = element group {
+    encrypted? &
+    element group_password { text }? &
+    element groupname      { text }? &
+    element userlist       { text }? &
+    element gid            { text }?
+}
+
+user_defaults =
+  element user_defaults {
+    expire? & 
+    ud_group? & 
+    ud_groups? & 
+    home? & 
+    inactive? & 
+    no_groups? &
+    shell? & 
+    skel? &
+    umask?
+  }
+
+# by default, AutoYaST exports list entries as 'listentry'
+authorized_key =
+  element authorized_key { text } | element listentry { text }
+
+authorized_keys =
+  element authorized_keys {
+    LIST,
+    authorized_key*
+}
+
+expire = element expire { text }
+ud_group = element group { text }
+ud_groups = element groups { text }
+inactive = element inactive { text }
+no_groups = element no_groups { BOOLEAN }
+shell = element shell { text }
+skel = element skel { text }
+umask = element umask { text }
+user = element user {
+    encrypted? &
+    fullname? &
+    surname? &
+    u_forename? &
+    u_gid? &
+    home? &
+    home_btrfs_subvolume? &
+    shell? &
+    uid? &
+    user_password? &
+    username? &
+    u_group? &
+    u_groups? &
+    password_settings? &
+    authorized_keys?
+}
+encrypted = element encrypted { BOOLEAN }
+fullname = element fullname { text }
+u_forename = element forename { text }
+surname = element surname { text }
+u_gid = element gid { text }
+home = element home { text }
+home_btrfs_subvolume = element home_btrfs_subvolume { BOOLEAN }
+user_password = element user_password { text }
+username = element username { text }
+uid = element uid { text }
+u_group = element group { text }
+u_groups = element groups { text }
+
+password_settings = element password_settings {
+    element expire { text }? &
+    element flag   { text }? &
+    element inact  { text }? &
+    element max    { text }? &
+    element min    { text }? &
+    element warn   { text }?
+}
+
+users =
+  element users {
+    LIST,
+    user*
+  }

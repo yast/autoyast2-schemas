@@ -1,0 +1,25 @@
+[Desktop Entry]
+Type=Application
+Categories=Settings;System;Qt;X-SuSE-YaST;X-SuSE-YaST-Misc;
+
+X-KDE-ModuleType=Library
+X-KDE-HasReadOnlyMode=true
+X-SuSE-YaST-Call=firstboot
+
+X-SuSE-YaST-Group=Misc
+X-SuSE-YaST-Argument=
+X-SuSE-YaST-RootOnly=true
+X-SuSE-YaST-AutoInst=all
+X-SuSE-YaST-Geometry=
+X-SuSE-YaST-SortKey=
+X-SuSE-YaST-AutoInstDataType=map
+X-SuSE-YaST-AutoInstResource=firstboot
+X-SuSE-YaST-AutoInstSchema=firstboot.rnc
+
+Exec=
+Icon=yast-firstboot
+
+Name=YaST Firstboot
+GenericName=Firstboot Configuration
+Comment=Enable or disable starting Firstboot sequence
+StartupNotify=true

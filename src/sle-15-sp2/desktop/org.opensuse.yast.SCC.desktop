@@ -1,0 +1,23 @@
+[Desktop Entry]
+Type=Application
+Categories=Settings;System;Qt;X-SuSE-YaST;X-SuSE-YaST-Software;
+
+X-SuSE-YaST-Call=registration
+X-SuSE-YaST-AutoInstClient=scc_auto
+X-SuSE-YaST-RootOnly=false
+X-SuSE-YaST-Group=Software
+X-SuSE-YaST-AutoInst=all
+X-SuSE-YaST-AutoInstClonable=false
+X-SuSE-YaST-AutoInstRequires=lan,proxy
+X-SuSE-YaST-AutoInstSchema=registration.rnc
+X-SuSE-YaST-AutoInstResource=suse_register
+X-SuSE-YaST-Keywords=scc,software,registration,smt,rmt,module,extension
+X-SuSE-YaST-WSL=true
+
+Icon=yast-product-registration
+Exec=/usr/bin/xdg-su -c "/sbin/yast2 scc"
+
+Name=YaST Product Registration
+GenericName=Product Registration
+Comment=Register your Product with the Vendor
+StartupNotify=true

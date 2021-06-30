@@ -1,0 +1,15 @@
+default namespace = "http://www.suse.com/1.0/yast2ns"
+namespace a = "http://relaxng.org/ns/compatibility/annotations/1.0"
+namespace config = "http://www.suse.com/1.0/configns"
+
+dasd = element dasd {
+    element devices {
+        LIST,
+        element listentry {
+            element channel { text } &
+            element format { BOOLEAN }? &
+            element diag { BOOLEAN }?
+        }*
+    }? &
+    element format_unformatted { BOOLEAN }?
+}

@@ -1,0 +1,28 @@
+[Desktop Entry]
+Type=Application
+Categories=Settings;System;Qt;X-SuSE-YaST;X-SuSE-YaST-Net_advanced;
+
+X-KDE-ModuleType=Library
+X-KDE-HasReadOnlyMode=true
+X-SuSE-YaST-Call=nfs
+
+X-SuSE-YaST-Group=Net_advanced
+X-SuSE-YaST-Argument=
+X-SuSE-YaST-RootOnly=true
+X-SuSE-YaST-AutoInst=all
+X-SuSE-YaST-Geometry=
+X-SuSE-YaST-SortKey=
+X-SuSE-YaST-AutoInstResource=nfs
+X-SuSE-YaST-AutoInstDataType=map
+X-SuSE-YaST-AutoInstClonable=true
+X-SuSE-YaST-AutoInstRequires=lan
+X-SuSE-YaST-AutoInstSchema=nfs.rnc
+X-SuSE-YaST-Keywords=network,file,directory,share
+
+Icon=yast-nfs
+Exec=xdg-su -c "/sbin/yast2 nfs"
+
+Name=YaST NFS Client
+GenericName=NFS Client
+Comment=Configure an NFS client
+StartupNotify=true

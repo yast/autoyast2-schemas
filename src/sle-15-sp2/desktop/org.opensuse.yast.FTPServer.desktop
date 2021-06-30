@@ -1,0 +1,26 @@
+[Desktop Entry]
+Type=Application
+Categories=Settings;System;Qt;X-SuSE-YaST;X-SuSE-YaST-Net_advanced;
+
+X-KDE-ModuleType=Library
+X-KDE-HasReadOnlyMode=true
+X-SuSE-YaST-Call=ftp-server
+
+X-SuSE-YaST-Group=Net_advanced
+X-SuSE-YaST-Argument=
+X-SuSE-YaST-RootOnly=true
+X-SuSE-YaST-AutoInst=all
+X-SuSE-YaST-AutoInstClonable=true
+X-SuSE-YaST-Geometry=
+X-SuSE-YaST-SortKey=
+X-SuSE-YaST-AutoInstResource=ftp-server
+X-SuSE-YaST-AutoInstSchema=ftp-server.rnc
+X-SuSE-YaST-Keywords=FTP,server,boot,file,transfer,protocol,network
+
+Icon=yast-ftp-server
+Exec=xdg-su -c "/sbin/yast2 ftp-server"
+
+Name=YaST FTP Server
+GenericName=FTP Server
+Comment=Module for configuration FTP daemon (vsftpd)
+StartupNotify=true

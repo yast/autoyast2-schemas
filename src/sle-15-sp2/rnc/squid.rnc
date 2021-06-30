@@ -1,0 +1,124 @@
+default namespace = "http://www.suse.com/1.0/yast2ns"
+namespace a = "http://relaxng.org/ns/compatibility/annotations/1.0"
+namespace config = "http://www.suse.com/1.0/configns"
+
+
+# for testing:
+# call 'trang squid.rnc squid.rng' to generate .rng file
+# call '/usr/bin/xmllint --noout --relaxng /path/to/squid.rng /path/to/xml' to
+# verify correctness of .rnc
+#start = element profile { squid }
+#include '/usr/share/YaST2/schema/autoyast/rnc/common.rnc'
+
+squid = element squid{
+    element acls{
+        LIST,
+        element listentry{
+            element name{ text }? &
+            element options{
+                LIST,
+                element option{ text }*
+            }? &
+            element type{ text }?                    
+        }*
+    }? &
+    element http_accesses{
+        LIST,
+        element listentry{
+            element acl{
+                LIST,
+                element listentry{ text }*
+            }? &
+            element allow{ BOOLEAN }?
+        }*
+    }? &
+    element http_ports{
+        LIST,
+        element listentry{
+            element host{ text }? &
+            element port{ text }? &
+            element transparent{ BOOLEAN }?
+        }*
+    }? &
+    element refresh_patterns{
+        LIST,
+        element listentry{
+            element case_sensitive{ BOOLEAN }? &
+            element max{ text }? &
+            element min{ text }? &
+            element percent{ text }? &
+            element regexp{ text }?
+        }*
+    }? &
+    element settings{
+        element access_log{
+            LIST,
+            element listentry{ text }*
+        }? &
+        element cache_dir{
+            LIST,
+            element listentry{ text }*
+        }? &
+        element cache_log{
+            LIST,
+            element listentry{ text }*
+        }? &
+        element cache_mem{
+            LIST,
+            element listentry{ text }*
+        }? &
+        element cache_mgr{
+            LIST,
+            element listentry{ text }*
+        }? &
+        element cache_replacement_policy{
+            LIST,
+            element listentry{ text }*
+        }? &
+        element cache_store_log{
+            LIST,
+            element listentry{ text }*
+        }? &
+        element cache_swap_high{
+            LIST,
+            element listentry{ text }*
+        }? &
+        element cache_swap_low{
+            LIST,
+            element listentry{ text }*
+        }? &
+        element client_lifetime{
+            LIST,
+            element listentry{ text }*
+        }? &
+        element connect_timeout{
+            LIST,
+            element listentry{ text }*
+        }? &
+        element emulate_httpd_log{
+            LIST,
+            element listentry{ text }*
+        }? &
+        element error_directory{
+            LIST,
+            element listentry{ text }*
+        }? &
+        element ftp_passive{
+            LIST,
+            element listentry{ text }*
+        }? &
+        element maximum_object_size{
+            LIST,
+            element listentry{ text }*
+        }? &
+        element memory_replacement_policy{
+            LIST,
+            element listentry{ text }*
+        }? &
+        element minimum_object_size{
+            LIST,
+            element listentry{ text }*
+        }?
+    }? &
+    element service_enabled_on_startup{ BOOLEAN }?
+}

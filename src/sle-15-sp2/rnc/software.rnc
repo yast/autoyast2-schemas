@@ -1,0 +1,75 @@
+default namespace = "http://www.suse.com/1.0/yast2ns"
+namespace config = "http://www.suse.com/1.0/configns"
+namespace a = "http://relaxng.org/ns/compatibility/annotations/1.0"
+
+software =
+  element software {
+    kernel? &
+    packages? &
+    post-packages? &
+    post-patterns? &
+    remove-packages? &
+    patterns? &
+    remove-patterns? &
+    products? &
+    remove-products? &
+    image? &
+    element do_online_update { BOOLEAN }? &
+    element install_recommended { BOOLEAN }? &
+    element instsource {text}?
+  }
+patterns =
+  element patterns {
+    LIST,
+    element (pattern | listentry) { text }+
+  }
+kernel = element kernel { text }
+post-packages =
+  element post-packages {
+    LIST,
+    element (package | listentry) {text}+
+  }
+post-patterns =
+  element post-patterns {
+    LIST,
+    element (pattern | listentry) {text}+
+  }
+packages =
+  element packages {
+    LIST,
+    element (package | listentry) {text}+
+  }
+remove-packages =
+  element remove-packages {
+    LIST,
+    element (package | listentry) {text}+
+  }
+remove-patterns =
+  element remove-patterns {
+    LIST,
+    element (pattern | listentry) {text}+
+  }
+products =
+  element products {
+    LIST,
+    element (product | listentry) {text}+
+  }
+remove-products =
+  element remove-products {
+    LIST,
+    element (product | listentry) {text}+
+  }
+script_params =
+  element script_params {
+      LIST,
+      element listentry { text }
+  }
+
+image =
+  element image {
+    element image_location  { text }? &
+    element image_name      { text }? &
+    element script_location { text }? &
+    script_params? &
+    element run_kickoff     { BOOLEAN }?
+  }
